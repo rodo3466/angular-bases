@@ -1,5 +1,25 @@
 <h5>Listado</h5>
 <ul class="list-group">
-  <li class="list-group-item">Krillin - 500</li>
-  <li class="list-group-item">Goku - 10000</li>
+  <li *ngFor="let personaje of listaPersonajes;
+              let i=index,
+              let EsPrimero=first,
+              let EsUltimo=last,
+              let EsPar=even"
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{
+      'list-group-item-info': EsUltimo,
+      'list-group-item-primary': EsPar
+
+    }"
+  >
+  <div>
+    <span class="text-primary">{{i+1}}. </span>
+    <span>{{personaje.name}} - </span>
+    <strong>Power: </strong>
+    <span>{{personaje.power}} </span>
+    <!--<span>| Es el primero: {{EsPrimero}} | </span>
+    <span>Es el último: {{EsUltimo}} </span>-->
+  </div>
+  <button class="btn btn-danger" (click)="emitirDeletePersonaje(i)">X</button>
+  </li>
 </ul>
