@@ -1,7 +1,7 @@
 <h4>DBZ Personajes</h4>
 <div class="row">
   <div class="col">
-    <dbz-list [listaPersonajes]="personajes" (onDeletePersonaje)="onDeletePersonaje($event)"></dbz-list>
+    <dbz-list [listaPersonajes]="getPersonajes()" (onDeletePersonaje)="onDeletePersonaje($event)"></dbz-list>
   </div>
   <div class="col">
     <dbz-add (onNewPersonaje)="onNewPersonaje($event)"></dbz-add>

@@ -1,6 +1,6 @@
 <h5>Listado</h5>
 <ul class="list-group">
-  <li *ngFor="let personaje of listaPersonajes;
+  <li *ngFor="let personaje of getPersonajes();
               let i=index,
               let EsPrimero=first,
               let EsUltimo=last,
@@ -16,10 +16,10 @@
     <span class="text-primary">{{i+1}}. </span>
     <span>{{personaje.name}} - </span>
     <strong>Power: </strong>
-    <span>{{personaje.power}} </span>
+    <span>{{personaje.id}} </span>
     <!--<span>| Es el primero: {{EsPrimero}} | </span>
     <span>Es el último: {{EsUltimo}} </span>-->
   </div>
-  <button class="btn btn-danger" (click)="emitirDeletePersonaje(i)">X</button>
+  <button class="btn btn-danger" (click)="borrarPersonaje(personaje.id)">X</button>
   </li>
 </ul>
